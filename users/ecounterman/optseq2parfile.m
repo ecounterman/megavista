@@ -16,7 +16,8 @@ fid = fopen(fileName,'w');
 for iEvent = 1:nEvents
     if strcmp(stimOrder{5}(iEvent),'NULL')
     else
-        fprintf(fid, '%3.2f\t%d\t%s', stimOrder{1}(iEvent), trialNum, char(stimOrder{5}(iEvent)));
+        fprintf(fid, '%3.2f\t%d\t%s', stimOrder{1}(iEvent), trialNum+56*(run-1), char(stimOrder{5}(iEvent)));
+%         fprintf(fid, '%3.2f\t%d\t%s', stimOrder{1}(iEvent)+358*(run-1), trialNum+56*(run-1), char(stimOrder{5}(iEvent)));
         fprintf(fid, '\n');
         trialNum = trialNum + 1;
     end
