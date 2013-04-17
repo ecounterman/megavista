@@ -58,5 +58,9 @@ for c = 1:numConds
     orientations(:,1,c) = tmpOrient(any(tmpBetasMatrix(:,:,c),2),:,c);
 end
 
+savefile = sprintf('SVM_Analysis/allBetas_
+
+save 
+
 end
 
