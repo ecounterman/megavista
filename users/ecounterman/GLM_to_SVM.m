@@ -56,11 +56,21 @@ end
 for c = 1:numConds
     betasMatrix(:,:,c) = tmpBetasMatrix(any(tmpBetasMatrix(:,:,c),2),:,c);
     orientations(:,1,c) = tmpOrient(any(tmpBetasMatrix(:,:,c),2),:,c);
-end
-
-savefile = sprintf('SVM_Analysis/allBetas_
+    
+    betaFile = sprintf('SVM_Analysis/data_SOACode%d.dat',c);
+    betaData = betasMatrix(:,:,c);
+    save(betaFile, 'betaData')
+    
+    classFile = sprintf('SVM_Analysis/dataClass_SOACode%d.dat',c);
+    classData = orientations(:,1,c);
+    save(classFile, 'classData')
+    
+    clear betaData classData
 
 save 
+end
+
+
 
 end
 
